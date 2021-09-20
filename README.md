@@ -1,7 +1,27 @@
 
-Hi there! In this prac, I used socket.io to create and use sockets to broadcast messges in real-time.
+Hi there! In this prac, I used docker to dockerize my portfolio website. 
 
-Here's how the project structure looks like now:
+**Docker version : Docker version 19.03.11**
+
+## Installation
+
+Pull the image from docker.
+
+```
+$ docker pull ioarun/sit725-2021-t2-prac9
+```
+Build docker.
+
+```
+docker build -t ioarun/sit725-2021-t2-prac9
+```
+
+Run docker
+```
+sudo docker run -d -p 5000:8080 ioarun/sit725-2021-t2-prac9
+```
+
+Next, go to localhost:5000 and you see the website up and running!
 -----------------------------------------------------------------
 
 **ORIGINAL README :**

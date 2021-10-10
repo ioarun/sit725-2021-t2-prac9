@@ -4,7 +4,7 @@ import { findAnomaly } from "/js/anomaly-detector/findAnomaly.js";
 var mean, std;
 
 const fileUploadBtn = document.getElementById('fileUploadBtn');
-// const fileUploadBtnTest = document.getElementById('fileUploadBtnTest');
+const fileUploadBtnTest = document.getElementById('fileUploadBtnTest');
 
 fileUploadBtn.addEventListener('click', () => {
   // var data = getDataFromCSV('referenceFile') // Here, referenceFile is the Id of element
@@ -27,40 +27,6 @@ fileUploadBtnTest.addEventListener('click', () => {
   var anomalyIndices = findAnomaly(data, mean, std);
   plotData(data, anomalyIndices);
 })
-
-const getProjects = () => {
-  $.get('/api/projects', (response) => {
-    if (response.statusCode == 200){
-      console.log(response);
-      addProjects(response.data);
-    }
-    else {
-      console.log(response);
-    }
-  }
-  )
-}
-
-const addProjects = (items) => {
-  items.forEach(item => {
-    let itemToAppend = 
-    '<div class="col l4 s12 m7">'+
-    '<div class="card">' +
-      '<h1 class="card-title center">'+ item.title + '</h1>' +
-      '<div class="card-image">' + 
-        '<img src="'+ item.image + '" style="height: 50%; width: 50%; padding-right: 5px; padding-left: 5px;">' +
-      '</div>' + 
-      '<div class="card-content">' +
-        '<p>' + item.description + '</p>' + 
-      '</div>' + 
-      '<div class="card-action">' + 
-        '<a href="'+ item.link +'"><img src="assets/github.png" style="height: 20px; padding-right: 15px;"></i> Checkout the project !</a>' + 
-      '</div>' + 
-    '</div>' +
-  '</div>' ;
-  $("#projects").append(itemToAppend);
-  });
-}
 
 const prepareDataToPlot = (data, anomalyIndices) => {
   var dataPoints = []
@@ -137,10 +103,3 @@ const plotDataTest = (data) => {
 //   console.log(msg);
 // })
 
-
-$(document).ready(function(){
-  // addProjects(projectList);
-  getProjects();
-  
-  
-});

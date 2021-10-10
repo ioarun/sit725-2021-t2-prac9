@@ -18,8 +18,6 @@ const getAllProjects = (res) => {
     })
 }
 
-
-
 module.exports = {
     getAllProjects
 }

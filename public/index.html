@@ -14,7 +14,7 @@
     <!-- Materialize icons-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <link href="styles.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
 </head>
 
 <body>
@@ -46,16 +46,22 @@
                     </div>
                     <div class="row">
                         <div class="center">
-                            <img src="assets/linkedin.png" alt="" class="circle responsive-img social-size"> 
-                            <img src="assets/twitter.png" alt="" class="circle responsive-img social-size"> 
-                            <img src="assets/gmail.png" alt="" class="circle responsive-img social-size">
+                            <a href="https://www.linkedin.com/in/ioarun/" >
+                                <img src="assets/linkedin.png" alt="" class="circle responsive-img social-size">
+                            </a>
+                            <a href="https://www.twitter.com/backpropguy">
+                                <img src="assets/twitter.png" alt="" class="circle responsive-img social-size"> 
+                            </a>
+                            <a href="https://www.github.com/ioarun">
+                                <img src="assets/github.png" alt="" class="circle responsive-img social-size">
+                            </a>
                         </div> 
                     </div>
                 </div>
                 <div class="col l8">
-                    <h1 class="title">Hi I'am Arun!</h1>
+                    <h1 class="title">Hi I'm Arun!</h1>
                     <p class="flow-text mainText">I'm here to help you solve your problems using my data science skills.</p>
-                    <p class="flow-text mainText">For instance, check out my anomaly detection service!</p>
+                    <p class="flow-text mainText">For instance, check out my <a href="/anomaly-detection.html">anomaly detection service!</a></p>
                 </div>
 
             </div>           
@@ -63,12 +69,10 @@
 
     </main>
     <footer class="page-footer">
-        <div class="footer-copyright">
             <div class="container center">
                 © 2021 Copyright Arun Kumar
             </div>
-        </div>
-    </footer>
+   </footer>
 
     <!-- socket IO Served by the server -->
     <script src="/socket.io/socket.io.js"></script>

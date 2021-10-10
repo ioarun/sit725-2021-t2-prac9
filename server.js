@@ -17,16 +17,16 @@ app.use('/api/projects', projectsRoute);
 
 app.use('/api/time-series-data', timeSeriesDataRoute);
 
-// Socket test
-io.on('connection', (socket) => {
-  console.log('a user connected');
-  socket.on('disconnect', () => {
-    console.log('user disconnected');
-  });
-  setInterval(()=>{
-    socket.emit('number', parseInt(Math.random()*10));
-  }, 1000);
-});
+// // Socket test
+// io.on('connection', (socket) => {
+//   console.log('a user connected');
+//   socket.on('disconnect', () => {
+//     console.log('user disconnected');
+//   });
+//   setInterval(()=>{
+//     socket.emit('number', parseInt(Math.random()*10));
+//   }, 1000);
+// });
 
 http.listen(port,()=>{
   console.log("Listening on port ", port);

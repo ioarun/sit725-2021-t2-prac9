@@ -14,7 +14,7 @@
     <!-- Materialize icons-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <link href="styles.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
 </head>
 
 <body>
@@ -37,29 +37,46 @@
             </div>
         </nav>
     </header>
-    <main>
-        <div class="container">
-            <h1> Anomaly detection coming soon ... </h1>
-            <div class="row">
-                <div class="col l4"><p>This is left panel</p></div>
-                <div class="col l8">This is where the graph will go</div>
+    <body>
+        <div class="container anomaly-detector-container">
+            <div class="row anomaly-detector-row">
+                <div class="col m4 s12"> 
+                    <div class="row">
+                        <div class="file-field input-field">
+                        <div>
+                            <input id="referenceFile" type="file">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text" placeholder="Choose reference data (CSV)">
+                        </div>
+                        </div> 
+                        <button id="fileUploadBtn" class="btn waves-effect waves-light btn-modified" type="submit" >Train
+                        </button>
+        
+                    <div class="file-field input-field">
+                    <div>
+                        <input id="testFile" type="file">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text" placeholder="Choose test data (CSV)">
+                    </div>
+                    </div> 
+                    <button id="fileUploadBtnTest" class="btn waves-effect waves-light btn-modified" type="submit" >Test!
+                    </button>   
+                </div> 
+                </div>
+                <div class="col m8 s12" style="height: 100%;">
+                    <div id="chartContainer"></div>
+                </div>
             </div>
-
-            <div id="chartContainer" style="height: 300px; width: 100%;"></div>
 
         </div>
 
-    </main>
-    <footer class="page-footer">
-        <div class="footer-copyright">
-            <div class="container center">
-                © 2021 Copyright Arun Kumar
-            </div>
-        </div>
-    </footer>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.1/papaparse.min.js"
+        integrity="sha512-EbdJQSugx0nVWrtyK3JdQQ/03mS3Q1UiAhRtErbwl1YL/+e2hZdlIcSURxxh7WXHTzn83sjlh2rysACoJGfb6g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- socket IO Served by the server -->
-    <!-- <script src="/socket.io/socket.io.js"></script> -->
+    <script src="/socket.io/socket.io.js"></script>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -72,8 +89,18 @@
     <!-- Charts-->
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
-    <script src="env.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-core"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-converter"></script>
 
+    <script type="module" src="/js/anomaly-detector/anomaly-detection.js"></script>
+    <script type="module" src="/js/anomaly-detector/utils.js"></script>
+    <script type="module" src="/js/anomaly-detector/findAnomaly.js"></script>
 </body>
+
+<footer class="page-footer">
+    <div class="container center">
+        © 2021 Copyright Arun Kumar
+    </div>
+</footer>
 
 </html>

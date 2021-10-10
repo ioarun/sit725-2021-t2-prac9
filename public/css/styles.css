@@ -6,14 +6,15 @@
   color: white;
 }
 .mainText{
-  color:white;
+  color:#515a66;
 }
 
 body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  background-color: #839ac3;
+  /* background-color: #839ac3; */
+  background-color: #ffffff;
 
 }
 
@@ -28,4 +29,15 @@ body {
 main {
   flex: 1 0 auto;
 }
-    
+
+.anomaly-detector-container {
+  height: calc(100vh - 53px);
+}
+
+.anomaly-detector-row {
+  margin-top: 10%;
+}
+
+.btn-modified {
+  background-color: #3a7fce
+}

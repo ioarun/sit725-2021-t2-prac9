@@ -3,7 +3,7 @@ Hi 👋 I'm Arun. This is my portfolio repository and it is [live](https://backp
 
 ![Image](images/home.png)
 
-## Use anomaly detection
+## Use my anomaly detection service!
 
 * Go to https://backpropguy.herokuapp.com/anomaly-detection
 
@@ -60,5 +60,10 @@ sudo docker run -d -p 5000:8080 ioarun/sit725-2021-t2-prac9
 
 ## Show time!
 Next, go to localhost:5000 and you see the website up and running!
+
+## Questions?
+
+You can reach out to me on twitter @backpropguy. Happy to chat about data science and software engineering.
+
 
 
